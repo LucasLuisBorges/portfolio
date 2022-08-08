@@ -1,4 +1,4 @@
-import { VStack, Image, Text } from '@chakra-ui/react';
+import { VStack, Image, Text, Box } from '@chakra-ui/react';
 import { AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { itemAnimated, MotionBox } from '../animations/projectCardAnimation';
@@ -22,7 +22,7 @@ export function CardProjects() {
           rounded={25}
         />
       </MotionBox>
-      <Text fontSize={24} fontWeight="medium" color="white">
+      <Text fontSize={24} fontWeight="medium" color="whiteAlpha.600">
         Projeto Name
       </Text>
       <AnimatePresence>{isOpen && <Content />}</AnimatePresence>
@@ -39,8 +39,11 @@ function Content() {
       animate="visible"
       exit="hidden"
     >
-      <Text>Olá</Text>
-      <Text>Olá</Text>
+      <VStack>
+        <Box w="50px" h="2px" bg="whiteAlpha.700" />
+        <Text>Olá </Text>
+        <Text>Olá</Text>
+      </VStack>
     </MotionBox>
   );
 }

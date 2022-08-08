@@ -9,7 +9,7 @@ import { MyInformation } from '../../../components/myInformation';
 export function MySection() {
   const containerRef = useRef(null);
   return (
-    <Container maxW="80%" h="60vh">
+    <Container maxW="80%" h="70vh">
       <MotionCenter>
         <MotionBox
           ref={containerRef}

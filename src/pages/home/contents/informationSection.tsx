@@ -16,7 +16,7 @@ import {
   MotionBox,
 } from '../../../animations/profileAnamation';
 import { useRef } from 'react';
-import { SolarSystem3d } from '../../../components/solarSystem3d';
+//import { SolarSystem3d } from '../../../components/solarSystem3d';
 
 export function InformationSection() {
   const containerRef = useRef(null);
@@ -117,8 +117,8 @@ export function InformationSection() {
           </MotionBox>
         </MotionBox>
       </MotionBox>
-      <Box boxSize="sm">
-        <SolarSystem3d />
+      <Box boxSize="sm" bg="whiteAlpha.400">
+        <Text>a</Text>
       </Box>
     </HStack>
   );
