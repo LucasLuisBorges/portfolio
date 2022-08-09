@@ -1,9 +1,16 @@
-import { VStack, Image, Text, Box } from '@chakra-ui/react';
+import { VStack, Image, Text, Box, Link } from '@chakra-ui/react';
 import { AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { itemAnimated, MotionBox } from '../animations/projectCardAnimation';
 
-export function CardProjects() {
+interface IProps {
+  name?: string;
+  img?: string;
+  description?: string;
+  link?: string;
+}
+
+export function CardProjects({ name, img, description, link }: IProps) {
   const [isOpen, setIsOpen] = useState(false);
   const toggleOpen = () => setIsOpen(!isOpen);
   return (
@@ -13,24 +20,23 @@ export function CardProjects() {
       onClick={toggleOpen}
       bg="primaryDark.200"
       py={5}
+      w="220px"
       rounded={25}
     >
-      <MotionBox boxSize="85%" layout>
-        <Image
-          src="https://bit.ly/dan-abramov"
-          alt="Dan Abramov"
-          rounded={25}
-        />
+      <MotionBox boxSize="200px" layout>
+        <Image src={img} rounded={25} />
       </MotionBox>
       <Text fontSize={24} fontWeight="medium" color="whiteAlpha.600">
-        Projeto Name
+        {name}
       </Text>
-      <AnimatePresence>{isOpen && <Content />}</AnimatePresence>
+      <AnimatePresence>
+        {isOpen && <Content description={description} link={link} />}
+      </AnimatePresence>
     </MotionBox>
   );
 }
 
-function Content() {
+function Content({ description, link }: IProps) {
   return (
     <MotionBox
       layout
@@ -41,8 +47,17 @@ function Content() {
     >
       <VStack>
         <Box w="50px" h="2px" bg="whiteAlpha.700" />
-        <Text>Olá </Text>
-        <Text>Olá</Text>
+        <Text color="whiteAlpha.600">{description}</Text>
+
+        <Link
+          href={`https://github.com/LucasLuisBorges/${link}`}
+          color="white"
+          bg="teal.400"
+          p={1}
+          rounded={10}
+        >
+          Ir para
+        </Link>
       </VStack>
     </MotionBox>
   );
