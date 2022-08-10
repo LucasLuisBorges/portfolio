@@ -1,6 +1,7 @@
 import { VStack } from '@chakra-ui/react';
 import { Navbar } from '../../components/navbar';
 import { InformationSection } from './contents/informationSection';
+import { JobSection } from './contents/jobSection';
 import { MySection } from './contents/mySection';
 import { ProjectSection } from './contents/projectSection';
 
@@ -11,6 +12,7 @@ export function Home() {
       <InformationSection />
       <MySection />
       <ProjectSection />
+      <JobSection />
     </VStack>
   );
 }
