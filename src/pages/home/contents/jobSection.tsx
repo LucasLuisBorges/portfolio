@@ -1,24 +1,32 @@
-import { Box, Button, HStack, Text, VStack } from '@chakra-ui/react';
-import { MdKeyboardArrowRight } from 'react-icons/md';
+import { Text, VStack, HStack, Center } from '@chakra-ui/react';
+import { CardJobs } from '../../../components/cardJobs';
+import { jobs } from '../../../utils/jobsData';
 
 export function JobSection() {
   return (
-    <VStack spacing={5} w="100%" pt={10}>
+    <VStack w="100%" spacing={10} pt={20} pb={20} flex={1}>
       <Text fontSize={32} color="whiteAlpha.600" fontWeight="medium">
         Jobs
       </Text>
-      <HStack w="80%" minH="70vh" color="white" justifyContent="space-between">
-        <Box boxSize="sm" bg="primaryDark.200">
-          <Text>a</Text>
-        </Box>
-
-        <Button
-          colorScheme="teal"
-          leftIcon={<MdKeyboardArrowRight size={24} />}
+      <Center w="100%">
+        <HStack
+          w="80%"
+          color="whiteAlpha.600"
+          justifyContent="center"
+          flexWrap="wrap"
+          gap={5}
         >
-          View more
-        </Button>
-      </HStack>
+          {jobs.map(items => (
+            <CardJobs
+              key={items.name}
+              name={items.name}
+              date={items.date}
+              type={items.type}
+              content={items.content}
+            />
+          ))}
+        </HStack>
+      </Center>
     </VStack>
   );
 }

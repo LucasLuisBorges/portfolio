@@ -16,12 +16,18 @@ import {
   MotionBox,
 } from '../../../animations/profileAnamation';
 import { useRef } from 'react';
-//import { SolarSystem3d } from '../../../components/solarSystem3d';
 
 export function InformationSection() {
   const containerRef = useRef(null);
+  const containerWelcomeRef = useRef(null);
   return (
-    <HStack w="80%" minH="70vh" color="white" justifyContent="space-between">
+    <HStack
+      w="80%"
+      minH="70vh"
+      color="white"
+      display="flex"
+      justifyContent={{ base: 'center', xl: 'space-between' }}
+    >
       <MotionBox
         as={VStack}
         boxSize="sm"
@@ -117,9 +123,22 @@ export function InformationSection() {
           </MotionBox>
         </MotionBox>
       </MotionBox>
-      <Box boxSize="sm" bg="whiteAlpha.400">
-        <Text>a</Text>
-      </Box>
+      <MotionBox
+        display={{ base: 'none', xl: 'flex' }}
+        ref={containerWelcomeRef}
+        h="sm"
+        w="50%"
+        alignItems="center"
+        justifyContent="center"
+        placeContent="center"
+        placeItems="center"
+      >
+        <MotionBox drag dragConstraints={containerWelcomeRef}>
+          <Text fontSize={24} fontWeight="medium" color="whiteAlpha.600">
+            Welcome the my portfolio
+          </Text>
+        </MotionBox>
+      </MotionBox>
     </HStack>
   );
 }

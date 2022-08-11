@@ -16,7 +16,7 @@ export function MySection() {
           display="flex"
           placeContent="center"
           placeItems="center"
-          w="60%"
+          w={{ base: '100%', xl: '60%', md: '80%' }}
           mt={20}
         >
           <MotionBox drag dragConstraints={containerRef}>
