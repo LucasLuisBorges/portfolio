@@ -22,6 +22,7 @@ const theme = extendTheme({
     primaryDark: {
       100: '#121212',
       200: '#202020',
+      300: 'RGBA(20, 20, 20, 0.90)',
     },
   },
   breakpoints: {

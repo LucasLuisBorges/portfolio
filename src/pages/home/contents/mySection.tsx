@@ -1,4 +1,4 @@
-import { Container } from '@chakra-ui/react';
+import { Container, ScaleFade } from '@chakra-ui/react';
 import { useRef } from 'react';
 import {
   MotionBox,
@@ -19,9 +19,11 @@ export function MySection() {
           w={{ base: '100%', xl: '60%', md: '80%' }}
           mt={20}
         >
-          <MotionBox drag dragConstraints={containerRef}>
-            <MyInformation />
-          </MotionBox>
+          <ScaleFade in={true} initialScale={0} delay={1.5}>
+            <MotionBox drag dragConstraints={containerRef}>
+              <MyInformation />
+            </MotionBox>
+          </ScaleFade>
         </MotionBox>
       </MotionCenter>
     </Container>

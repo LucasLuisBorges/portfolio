@@ -1,5 +1,6 @@
 import { VStack } from '@chakra-ui/react';
 import { Navbar } from '../../components/navbar';
+import { FooterSection } from './contents/footerSection';
 import { InformationSection } from './contents/informationSection';
 import { JobSection } from './contents/jobSection';
 import { MySection } from './contents/mySection';
@@ -13,6 +14,7 @@ export function Home() {
       <MySection />
       <ProjectSection />
       <JobSection />
+      <FooterSection />
     </VStack>
   );
 }
