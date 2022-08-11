@@ -14,6 +14,7 @@ export function Navbar() {
       else updateFixed(false);
     });
   }, []);
+
   return (
     <HStack
       pos="fixed"

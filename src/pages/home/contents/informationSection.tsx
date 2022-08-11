@@ -22,6 +22,7 @@ export function InformationSection() {
   const containerWelcomeRef = useRef(null);
   return (
     <HStack
+      pt={20}
       w="80%"
       minH="70vh"
       color="white"
