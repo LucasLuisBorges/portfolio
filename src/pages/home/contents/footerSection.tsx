@@ -19,12 +19,12 @@ export function FooterSection() {
           <Text color="whiteAlpha.600">Number: +55 (48) 999444443</Text>
         </Box>
         <Button colorScheme="teal" size="md">
-          <Link download href="./jobSection.tsx">
+          <Link download href="./assets/cv.pdf">
             Download cv
           </Link>
         </Button>
       </VStack>
-      <Box boxSize="250px" bg="blue" />
+      <Box boxSize="250px" bg="blue"></Box>
     </HStack>
   );
 }
