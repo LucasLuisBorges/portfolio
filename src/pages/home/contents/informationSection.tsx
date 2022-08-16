@@ -1,4 +1,11 @@
-import { Avatar, VStack, Text, HStack, Box } from '@chakra-ui/react';
+import {
+  Avatar,
+  VStack,
+  Text,
+  HStack,
+  Box,
+  useColorModeValue,
+} from '@chakra-ui/react';
 import {
   SiCss3,
   SiHtml5,
@@ -20,6 +27,10 @@ import { useRef } from 'react';
 export function InformationSection() {
   const containerRef = useRef(null);
   const containerWelcomeRef = useRef(null);
+  const textwelcome = useColorModeValue('whiteAlpha.600', 'primaryWhite.100');
+  const bg = useColorModeValue('primaryDark.200', 'primaryWhite.200');
+  const textColor = useColorModeValue('whiteAlpha.700', 'white');
+
   return (
     <HStack
       pt={20}
@@ -32,7 +43,7 @@ export function InformationSection() {
       <MotionBox
         as={VStack}
         boxSize="sm"
-        bg="primaryDark.200"
+        bg={bg}
         rounded={15}
         py={15}
         boxShadow="dark-lg"
@@ -74,7 +85,7 @@ export function InformationSection() {
             </MotionBox>
           </MotionBox>
           <MotionBox variants={nameAnimated} initial="hidden" animate="visible">
-            <Text fontSize={24} color="whiteAlpha.700">
+            <Text fontSize={24} color={textColor}>
               Lucas Luis Borges
             </Text>
           </MotionBox>
@@ -83,12 +94,12 @@ export function InformationSection() {
             initial="hidden"
             animate="visible"
           >
-            <Text fontSize={16} color="whiteAlpha.700">
+            <Text fontSize={16} color={textColor}>
               Developer
             </Text>
           </MotionBox>
         </MotionBox>
-        <Box w="60%" h="2px" bg="whiteAlpha.700" />
+        <Box w="60%" h="2px" bg={textColor} />
         <MotionBox
           as={HStack}
           maxW="75%"
@@ -135,7 +146,7 @@ export function InformationSection() {
         placeItems="center"
       >
         <MotionBox drag dragConstraints={containerWelcomeRef}>
-          <Text fontSize={24} fontWeight="medium" color="whiteAlpha.600">
+          <Text fontSize={24} fontWeight="medium" color={textwelcome}>
             Welcome the my portfolio
           </Text>
         </MotionBox>

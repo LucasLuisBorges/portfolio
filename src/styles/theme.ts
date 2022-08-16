@@ -24,6 +24,11 @@ const theme = extendTheme({
       200: '#202020',
       300: 'RGBA(20, 20, 20, 0.90)',
     },
+    primaryWhite: {
+      100: '#169992',
+      200: '#0d5352',
+      300: 'RGBA(16, 99 ,92, 0.80)',
+    },
   },
   breakpoints: {
     ssm: '480px',

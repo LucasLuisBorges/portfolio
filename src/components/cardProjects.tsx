@@ -1,4 +1,11 @@
-import { VStack, Image, Text, Box, Link } from '@chakra-ui/react';
+import {
+  VStack,
+  Image,
+  Text,
+  Box,
+  Link,
+  useColorModeValue,
+} from '@chakra-ui/react';
 import { AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { itemAnimated, MotionBox } from '../animations/projectCardAnimation';
@@ -13,12 +20,14 @@ interface IProps {
 export function CardProjects({ name, img, description, link }: IProps) {
   const [isOpen, setIsOpen] = useState(false);
   const toggleOpen = () => setIsOpen(!isOpen);
+  const bg = useColorModeValue('primaryDark.200', 'primaryWhite.200');
+  const textColor = useColorModeValue('whiteAlpha.700', 'white');
   return (
     <MotionBox
       as={VStack}
       layout
       onClick={toggleOpen}
-      bg="primaryDark.200"
+      bg={bg}
       py={5}
       w="220px"
       rounded={25}
@@ -26,7 +35,7 @@ export function CardProjects({ name, img, description, link }: IProps) {
       <MotionBox boxSize="200px" layout>
         <Image src={img} rounded={25} />
       </MotionBox>
-      <Text fontSize={24} fontWeight="medium" color="whiteAlpha.600">
+      <Text fontSize={24} fontWeight="medium" color={textColor}>
         {name}
       </Text>
       <AnimatePresence>
@@ -37,6 +46,7 @@ export function CardProjects({ name, img, description, link }: IProps) {
 }
 
 function Content({ description, link }: IProps) {
+  const textColor = useColorModeValue('whiteAlpha.700', 'white');
   return (
     <MotionBox
       layout
@@ -46,8 +56,8 @@ function Content({ description, link }: IProps) {
       exit="hidden"
     >
       <VStack>
-        <Box w="50px" h="2px" bg="whiteAlpha.700" />
-        <Text color="whiteAlpha.600">{description}</Text>
+        <Box w="50px" h="2px" bg={textColor} />
+        <Text color={textColor}>{description}</Text>
 
         <Link
           href={`https://github.com/LucasLuisBorges/${link}`}
