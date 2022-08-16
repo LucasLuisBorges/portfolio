@@ -1,4 +1,4 @@
-import { Box, Link } from '@chakra-ui/react';
+import { Link } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
 interface IProps {
@@ -8,8 +8,8 @@ interface IProps {
 
 export function LinkIconAnimated({ children, link }: IProps) {
   return (
-    <Box
-      as={Link}
+    <Link
+      target="_blank"
       pos="relative"
       href={link}
       _after={{
@@ -29,6 +29,6 @@ export function LinkIconAnimated({ children, link }: IProps) {
       }}
     >
       {children}
-    </Box>
+    </Link>
   );
 }
