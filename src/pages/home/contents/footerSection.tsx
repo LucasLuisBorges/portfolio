@@ -1,11 +1,11 @@
 import {
   Box,
-  Button,
   HStack,
   Link,
   Text,
   useColorModeValue,
   VStack,
+  Image,
 } from '@chakra-ui/react';
 
 export function FooterSection() {
@@ -23,13 +23,25 @@ export function FooterSection() {
           </Text>
           <Text color={textColor}>Number: +55 (48) 999444443</Text>
         </Box>
-        <Button colorScheme="teal" size="md">
-          <Link download href="./assets/cv.pdf">
-            Download cv
-          </Link>
-        </Button>
+        <Link
+          download
+          href="./assets/cv.pdf"
+          color="white"
+          size="md"
+          bg="cyan.600"
+          px={5}
+          py={2}
+          borderRadius={5}
+        >
+          Download cv
+        </Link>
       </VStack>
-      <Box boxSize="250px" bg="blue"></Box>
+      <Box boxSize="250px">
+        <Image
+          objectFit="cover"
+          src="https://www.imagenspng.com.br/wp-content/uploads/2022/04/flork-png-13-1024x959.png"
+        />
+      </Box>
     </HStack>
   );
 }

@@ -48,4 +48,11 @@ export const projects = [
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png',
   },
+  {
+    name: 'ImHere',
+    desc: 'An simple to.do',
+    link: 'imhere',
+    image:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png',
+  },
 ];

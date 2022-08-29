@@ -30,7 +30,7 @@ export function Navbar() {
       zIndex={100}
       transition="1s"
     >
-      <Text color="whiteAlpha.600">LOGO</Text>
+      <Text color="whiteAlpha.600">LBORGES</Text>
       <HStack spacing={5}>
         <InvertThemeButton />
         <LinkIconAnimated link="https://www.linkedin.com/in/lucasluisborges/">
